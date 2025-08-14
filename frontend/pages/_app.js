@@ -1,22 +1,8 @@
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client";
 import "@/styles/globals.css";
 import Layout from "@/components/Layout";
 import { AppProvider } from "@/context/AppContext";
-
-const API_URL = process.env.NEXT_PUBLIC_STRAPI_URL || "http://127.0.0.1:1337";
-
-export const client = new ApolloClient({
-  uri: `${API_URL}/graphql`,
-  cache: new InMemoryCache(),
-  defaultOptions: {
-    mutate: {
-      errorPolicy: "all",
-    },
-    query: {
-      errorPolicy: "all",
-    },
-  },
-});
+import { client } from "@/lib/apollo-client";
 
 export default function App({ Component, pageProps }) {
   return (

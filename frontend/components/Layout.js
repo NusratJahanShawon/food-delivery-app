@@ -1,6 +1,8 @@
+import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { useAppContext } from "@/context/AppContext";
 import Cookie from "js-cookie";
+const Cart = dynamic(() => import("@/components/Cart"), { ssr: false });
 
 import Head from "next/head";
 import Link from "next/link";
@@ -86,6 +88,7 @@ export default function Layout(props) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Navigation />
+      <Cart />
       <div className="container mx-auto px-4">{props.children}</div>
     </div>
   );
