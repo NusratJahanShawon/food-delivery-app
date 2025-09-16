@@ -6,6 +6,7 @@
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
+    "start": "node server.js",
     "build": "strapi build",
     "strapi": "strapi"
   },
@@ -32,4 +33,7 @@
     "npm": ">=6.0.0"
   },
   "license": "MIT"
+  
 }
+
+
